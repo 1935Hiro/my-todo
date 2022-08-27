@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $user = Auth::user();
 
-        $folder = $user->folders()->first();
+        $folder = $user->folders->first();
 
         if(is_null($folder))
         {

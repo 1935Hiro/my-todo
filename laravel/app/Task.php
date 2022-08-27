@@ -13,11 +13,11 @@ class Task extends Model
         3 => ['label' => '完了','class' => ''],
     ];
 
-    public function getStatusLabelAttribute()
+    public function getStatusClassAttribute()
     {
-        $status = $this -> attributes['status'];
+        $status = $this->attributes['status'];
 
-        if(!isset(self::STATUS[$status])){
+        if (!isset(self::STATUS[$status])) {
             return '';
         }
 
@@ -26,7 +26,6 @@ class Task extends Model
 
     public function getFormattedDueDateAttribute()
     {
-        return Carbon::createFromFormat('Y-m-d', $this->attributes['due_date'])
-            ->format('Y/m/d');
+        return Carbon::createFromFormat('Y-m-d', $this->attributes['due_date'])->format('Y/m/d');
     }
 }

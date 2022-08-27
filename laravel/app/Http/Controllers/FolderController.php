@@ -21,7 +21,7 @@ class FolderController extends Controller
         
         $folder->save();
         
-        Auth::user()-> folders()->save($folder);
+        Auth::user()->folders->save($folder);
 
         return redirect()->route('tasks.index', [
             'id' => $folder->id,
