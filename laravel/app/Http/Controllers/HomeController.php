@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $user = Auth::user();
+        $user = Auth::getuser();
 
         $folder = $user->folders->first();
 
@@ -19,7 +19,7 @@ class HomeController extends Controller
         }
 
         return redirect()->route('tasks.index',[
-            'id' => $folder->id,
+            'folder' => $folder->id,
         ]);
     }
 }

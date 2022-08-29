@@ -14,7 +14,7 @@ class AddUserIdToFolders extends Migration
     public function up()
     {
         Schema::table('folders', function (Blueprint $table) {
-            $table->biginteger('user_id')->unsigned()->nullable();
+            $table->biginteger('user_id')->unsigned();
 
             $table->foreign('user_id')->references('id')->on('users');
         });

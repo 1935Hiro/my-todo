@@ -13,7 +13,7 @@ class Task extends Model
         3 => ['label' => '完了','class' => ''],
     ];
 
-    public function getStatusClassAttribute()
+    public function getStatusLabelAttribute()
     {
         $status = $this->attributes['status'];
 
@@ -21,6 +21,17 @@ class Task extends Model
             return '';
         }
 
+        return self::STATUS[$status]['label'];
+    }
+
+    public function getStatusClassAttribute()
+    {
+        $status = $this->attributes['status'];
+    
+        if (!isset(self::STATUS[$status])) {
+            return '';
+        }
+    
         return self::STATUS[$status]['class'];
     }
 

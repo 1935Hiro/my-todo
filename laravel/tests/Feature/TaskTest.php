@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+// use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use Carbon\Carbon;
 use App\Http\Requests\CreateTask;
@@ -26,7 +26,7 @@ class TaskTest extends TestCase
 
     public function due_date_should_be_date()
     {
-        $response = $this ->post('/folders/1/tasks/create',[
+        $response = $this->post('/folders/1/tasks/create',[
             'title' => 'sample task',
             'due_date' => 123,
         ]);
